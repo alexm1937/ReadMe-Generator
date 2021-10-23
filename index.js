@@ -128,7 +128,7 @@ const promptProject = projectData => {
         //portfolioData.push(projectData);
         const pageMD = generateREADME(projectData);
         const title = projectData.title + "README" + ".md";
-        fs.writeFile(title, pageMD, err => {
+        fs.writeFile("./generated-readme/" + title, pageMD, err => {
             if(err) throw new Error(err);
             console.log('File Created! Checkout "project name"README.md in this directory to see it!');
         })

@@ -34,3 +34,9 @@ THEN this is added to the section of the README entitled Questions,
 
 WHEN I click on the links in the Table of Contents
 THEN I am taken to the corresponding section of the README
+
+
+TO DO STILL: 
+add prompt for license types!
+create readme for the application
+create walk-through video with screenCastify or whatever, link to Application README
