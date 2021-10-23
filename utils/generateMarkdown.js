@@ -1,8 +1,40 @@
+
+
 module.exports = templateData => {
   console.log(templateData);
 
   return `
-  hello ${templateData.projectName}
+  # ${templateData.title}
+
+  ## Description
+  ${templateData.description}
+
+  ## Table of contents
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
+
+  ## Installation
+  ${templateData.installation}
+
+  ## Usage
+  ${templateData.usage}
+
+  ## License
+
+  ## Contributing
+  ${templateData.contributing}
+
+  ## Tests
+  ${templateData.testing}
+
+  ## Questions
+  You can find my github at: https://github.com/${templateData.gitHub} </br>
+  You can reach me with additional questions at: ${templateData.email}
   `;
 }
 
@@ -25,10 +57,5 @@ module.exports = templateData => {
 // TODO: Create a function to generate markdown for README
 // function generateMarkdown(data) {
 
-
-  //markdown template layout
-//   return `
-//   # ${data.title}
-// `;
 
 // module.exports = generateMarkdown;
