@@ -1,7 +1,8 @@
 module.exports = templateData => {
   console.log(templateData);
+
   return `
-  hello
+  hello ${templateData.projectName}
   `;
 }
 
