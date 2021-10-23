@@ -91,15 +91,7 @@ const promptProject = projectData => {
         {
             type: 'input',
             name: 'testing',
-            message: 'Enter instructions on how to test this project (Required)',
-            validate: testingInput => {
-                if(testingInput) {
-                    return true;
-                } else {
-                    console.log('Please enter instructions on to test the project!');
-                    return false;
-                }
-            }
+            message: 'Enter instructions on how to test this project (Optional)'
         },
         //LICENSES GO HERE
 

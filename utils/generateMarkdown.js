@@ -1,4 +1,11 @@
-
+const generateTests = templateData => {
+  if(!templateData.testing) {
+    return '';
+  }
+  return `## Tests 
+  ${templateData.testing}
+  `;
+};
 
 module.exports = templateData => {
   console.log(templateData);
@@ -29,8 +36,7 @@ module.exports = templateData => {
   ## Contributing
   ${templateData.contributing}
 
-  ## Tests
-  ${templateData.testing}
+  ${generateTests(templateData)}
 
   ## Questions
   You can find my github at: https://github.com/${templateData.gitHub} </br>
@@ -40,7 +46,8 @@ module.exports = templateData => {
 
 
 
-
+  // ## Tests
+  // ${templateData.testing}
 
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
