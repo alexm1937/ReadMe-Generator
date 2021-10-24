@@ -3,8 +3,14 @@ const generateTests = templateData => {
     return '';
   }
   return `## Tests 
-  ${templateData.testing}
-  `;
+  ${templateData.testing} `;
+};
+const generateContributing = templateData => {
+  if(!templateData.contributing) {
+    return '';
+  }
+  return `## Contributing 
+  ${templateData.contributing} `;
 };
 
 module.exports = templateData => {
@@ -33,8 +39,7 @@ module.exports = templateData => {
 
   ## License
 
-  ## Contributing
-  ${templateData.contributing}
+  ${generateContributing(templateData)}
 
   ${generateTests(templateData)}
 
@@ -46,8 +51,6 @@ module.exports = templateData => {
 
 
 
-  // ## Tests
-  // ${templateData.testing}
 
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
@@ -61,8 +64,3 @@ module.exports = templateData => {
 // If there is no license, return an empty string
 //function renderLicenseSection(license) {}
 
-// TODO: Create a function to generate markdown for README
-// function generateMarkdown(data) {
-
-
-// module.exports = generateMarkdown;

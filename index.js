@@ -3,7 +3,6 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generateREADME = require('./utils/generateMarkdown');
 
-
 // TODO: Create an array of questions for user input
 //const questions = [];
 
@@ -63,7 +62,7 @@ const promptProject = projectData => {
         {
             type: 'input',
             name: 'usage',
-            message: 'What is this project used for, and how do we use it? (Required)',
+            message: 'Enter directions on how to run and use the project application (Required)',
             validate: usageInput => {
                 if(usageInput) {
                     return true;
@@ -77,15 +76,7 @@ const promptProject = projectData => {
         {
             type: 'input',
             name: 'contributing',
-            message: 'Enter instructions on how to contribute to the project (Required)',
-            validate: contributingInput => {
-                if(contributingInput) {
-                    return true;
-                } else {
-                    console.log('Please enter instructions on how you would like people to contribute!');
-                    return false;
-                }
-            }
+            message: 'Enter instructions on how to contribute to the project (Optional)',
         },
         //How to test app?
         {
@@ -128,7 +119,7 @@ const promptProject = projectData => {
         //portfolioData.push(projectData);
         const pageMD = generateREADME(projectData);
         const title = projectData.title + "README" + ".md";
-        fs.writeFile("./generated-readme/" + title, pageMD, err => {
+        fs.writeFile("./generated-readme/ " + title, pageMD, err => {
             if(err) throw new Error(err);
             console.log('File Created! Checkout "project name"README.md in this directory to see it!');
         })
@@ -137,9 +128,3 @@ const promptProject = projectData => {
 
         
 promptProject()
-
-// TODO: Create a function to initialize app
-//function init() {}
-
-// Function call to initialize app
-//init();
