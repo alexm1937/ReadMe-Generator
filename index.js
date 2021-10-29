@@ -85,7 +85,12 @@ const promptProject = projectData => {
             message: 'Enter instructions on how to test this project (Optional)'
         },
         //LICENSES GO HERE
-
+        {
+            type: 'checkbox',
+            name: 'licenses',
+            message: 'What license is this project built under? PLEASE CHOOSE ONLY 1',
+            choices: ['GNU General Public License', 'MPL Mozilla Public License', 'MIT License', 'Unlicense']
+        },
         //Github username
         {
             type: 'input',
@@ -104,15 +109,7 @@ const promptProject = projectData => {
         {
             type: 'input',
             name: 'email',
-            message: 'Enter your email (Required)',
-            validate: emailInput => {
-                if(emailInput) {
-                    return true;
-                } else {
-                    console.log('Please enter your Github Username!');
-                    return false;
-                }
-            }
+            message: 'Enter your email',
         }
     ])
     .then(projectData => {
