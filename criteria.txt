@@ -37,5 +37,6 @@ THEN I am taken to the corresponding section of the README
 
 
 TO DO STILL: 
-add prompt for license types!
+add license badges
+
 create walk-through video with screenCastify or whatever, link to Application README
