@@ -3,9 +3,6 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generateREADME = require('./utils/generateMarkdown');
 
-// TODO: Create an array of questions for user input
-//const questions = [];
-
 const promptProject = projectData => {
     console.log(`
         ======================
@@ -86,7 +83,7 @@ const promptProject = projectData => {
         },
         //LICENSES GO HERE
         {
-            type: 'checkbox',
+            type: 'list',
             name: 'licenses',
             message: 'What license is this project built under? PLEASE CHOOSE ONLY 1',
             choices: ['GNU General Public License', 'MPL Mozilla Public License', 'MIT License', 'Unlicense']
